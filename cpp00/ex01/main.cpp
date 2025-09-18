@@ -9,9 +9,10 @@ int main()
 		std::cout << "Enter command (ADD, SEARCH, EXIT): \n";
         std::getline(std::cin, command);
 		if (command == "ADD")
-			
-		if (command == "EXIT")
+			book.setContact();
+		else if (command == "EXIT")
 			exit(1);
+		else { std::cout << "Invalid command.\n"; }
 	}
 	return(0);
 }

@@ -23,6 +23,8 @@ class phonebook
 			std :: getline(std :: cin , nickname);
 			std :: cout << "Enter phoneNumber ";
 			std :: getline(std :: cin , phoneNumber);
+			std :: cout << "Enter darkestSecret ";
+			std :: getline(std :: cin , darkestSecret);
 		}
 };
 
