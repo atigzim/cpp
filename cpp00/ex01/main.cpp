@@ -1,18 +1,22 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
 	std :: string command;
-	phonebook book;
-	while(1)
+	PhoneBook book;
+	while(true)
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): \n";
-        std::getline(std::cin, command);
+		if(!(getline(std::cin, command)))
+		{
+			std::cout << "EOF" << std::endl ;
+			exit(1);
+		}
 		if (command == "ADD")
-			book.setContact();
+			book.contact[0].setContact();
 		else if (command == "EXIT")
 			exit(1);
-		else { std::cout << "Invalid command.\n"; }
+
 	}
 	return(0);
 }
