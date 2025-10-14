@@ -20,9 +20,11 @@ class Contact
 class PhoneBook
 {
 	private:
+	
 	public :
-		Contact contact[8];
+	Contact contact[8];
 		
 };
+
 
 # endif
