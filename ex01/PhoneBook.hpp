@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
+#include <iomanip>
 
 class Contact
 {
@@ -14,17 +15,22 @@ class Contact
 		std::string phoneNumber;
 		std::string darkestSecret;
 	public:
-		void setContact();
-};
-
+		int setContact();
+		void printContact();
+		int contact_fields(std::string str, std::string &fie);
+		int pars_phoneNumber(std::string str);
+		int pars_contact_fields(std::string &str);
+	};
+	
 class PhoneBook
 {
 	private:
 	
 	public :
-	Contact contact[8];
-		
-};
+		void searchContact();
+		int inds;		
+		Contact contact[8];
+}; 
 
 
 # endif

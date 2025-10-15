@@ -4,6 +4,10 @@ int main()
 {
 	std :: string command;
 	PhoneBook book;
+	int i;
+
+	book.inds = 0;
+	i = 0;
 	while(true)
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): \n";
@@ -13,10 +17,21 @@ int main()
 			exit(1);
 		}
 		if (command == "ADD")
-			book.contact[0].setContact();
+		{
+			if (book.inds == 7)
+			{
+				i = 0;
+			}
+			if (book.contact[i].setContact())
+				continue;
+			if (book.inds <= 7)
+				book.inds++;
+			i++;
+		}
+		else if (command == "SEARCH")
+			book.searchContact();
 		else if (command == "EXIT")
-			exit(1);
-
+			exit(0);
 	}
 	return(0);
 }

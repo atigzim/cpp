@@ -1,15 +1,82 @@
 #include "PhoneBook.hpp"
 
-void Contact::setContact()
+int  Contact::pars_phoneNumber(std::string str)
 {
-	std::cout << "Enter first name: ";
-	std::getline(std::cin ,firstName);
-	std::cout << "Enter lastName ";
-	std::getline(std::cin , lastName);
-	std::cout << "Enter nickname ";
-	std::getline(std::cin , nickname);
-	std::cout << "Enter phoneNumber ";
-	std::getline(std::cin , phoneNumber);
-	std::cout << "Enter darkestSecret ";
-	std::getline(std::cin , darkestSecret);
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if(isdigit(str[i]) == 0)
+			return (1);	
+	}
+	return (0);
+}
+
+// int  Contact::pars_contact_fields(std::string &str)
+// {
+
+// }
+int Contact::contact_fields(std::string str, std::string &fie)
+{
+	std::cout << str ;
+	std::getline(std::cin ,fie);
+	if(fie.empty())
+		return (1);
+	if(str == "Enter phoneNumber: ")
+	{
+		if(pars_phoneNumber(fie))
+			return (1);
+	}
+	return(0);
+}
+
+int Contact::setContact()
+{
+	if (contact_fields("Enter first name: ", firstName))
+		return(1);
+	if (contact_fields("Enter lastName: ", lastName))
+		return(1);
+	if (contact_fields("Enter nickname: ", nickname))
+		return(1);
+	if (contact_fields("Enter phoneNumber: ", phoneNumber))
+		return(1);
+	if (contact_fields("Enter darkestSecret: ", darkestSecret))
+		return(1);
+	return (0);
+}
+
+void Contact::printContact()
+{
+	// std::cout << "|";
+	if (firstName.length() > 10)
+		std::cout << firstName.substr(0, 9) + ".";
+	else
+		std::cout << std::setw(10) << firstName;
+
+	std::cout << "|";
+	if (lastName.length() > 10)
+		std::cout << lastName.substr(0, 9) + ".";
+	else
+		std::cout << std::setw(10) << lastName;
+
+	std::cout << "|";
+	if (nickname.length() > 10)
+		std::cout << nickname.substr(0, 9) + ".";
+	else
+		std::cout << std::setw(10) << nickname;
+
+	std::cout << "|" << std::endl;
+}
+
+void	PhoneBook::searchContact()
+{
+	for (int i = 0; i < inds ; i++)
+	{
+		for (int j = 0; j < 11; j++)
+			std::cout << "---";
+		std::cout << "\n" << i + 1 << " |";
+		contact[i].printContact();
+	}
+	if(inds > 0)
+		for (int j = 0; j < 11; j++)
+			std::cout << "---";
+	std::cout << std ::endl;
 }
