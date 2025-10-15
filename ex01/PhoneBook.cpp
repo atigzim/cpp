@@ -9,16 +9,22 @@ int  Contact::pars_phoneNumber(std::string str)
 	}
 	return (0);
 }
-
-// int  Contact::pars_contact_fields(std::string &str)
-// {
-
-// }
+int Contact::pars_contact_fields(std::string &str)
+{
+	if (str.empty())
+		return (1);
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if(isalnum(str[i]) == 0)
+			return (1);	
+	}
+	return (0);
+}
 int Contact::contact_fields(std::string str, std::string &fie)
 {
 	std::cout << str ;
 	std::getline(std::cin ,fie);
-	if(fie.empty())
+	if(pars_contact_fields(fie))
 		return (1);
 	if(str == "Enter phoneNumber: ")
 	{
@@ -45,7 +51,6 @@ int Contact::setContact()
 
 void Contact::printContact()
 {
-	// std::cout << "|";
 	if (firstName.length() > 10)
 		std::cout << firstName.substr(0, 9) + ".";
 	else
@@ -66,6 +71,16 @@ void Contact::printContact()
 	std::cout << "|" << std::endl;
 }
 
+void Contact::chooseContack()
+{
+	std::cout << "firstName : " << firstName <<"\n" ;
+	std::cout << "lastName : " << lastName <<"\n";
+	std::cout << "nickname : " << nickname <<"\n";
+	std::cout << "phoneNumber : " << phoneNumber <<"\n";
+	std::cout << "darkestSecret : " << darkestSecret <<"\n";
+	// std::cout << std ::endl;
+}
+
 void	PhoneBook::searchContact()
 {
 	for (int i = 0; i < inds ; i++)
@@ -75,8 +90,35 @@ void	PhoneBook::searchContact()
 		std::cout << "\n" << i + 1 << " |";
 		contact[i].printContact();
 	}
+
 	if(inds > 0)
 		for (int j = 0; j < 11; j++)
 			std::cout << "---";
 	std::cout << std ::endl;
+
+	while (inds > 0)
+	{
+		std::string command;
+		std::cout << "Choose a contact (1-> " << inds << "): ";
+		
+		if (!std::getline(std::cin, command))
+		{
+			std::cout << "\nEnd of input detected. Exiting search.\n";
+			break;
+		}
+		if (contact[0].pars_phoneNumber(command) == 0)
+		{
+			int index = std::stoi(command);
+
+			if (index >= 1 && index <= inds)
+			{
+				contact[index - 1].chooseContack(); 
+				break;
+			}
+			else
+				std::cout << "❌ Invalid index! Try again.\n";
+		}
+		else
+			std::cout << "❌ Please enter a number only.\n";
+	}
 }

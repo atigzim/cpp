@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact
 {
@@ -20,6 +21,7 @@ class Contact
 		int contact_fields(std::string str, std::string &fie);
 		int pars_phoneNumber(std::string str);
 		int pars_contact_fields(std::string &str);
+		void chooseContack();
 	};
 	
 class PhoneBook

@@ -18,7 +18,7 @@ int main()
 		}
 		if (command == "ADD")
 		{
-			if (book.inds == 7)
+			if (book.inds == 8)
 			{
 				i = 0;
 			}
