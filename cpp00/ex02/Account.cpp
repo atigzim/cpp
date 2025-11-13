@@ -50,7 +50,6 @@ bool Account::makeWithdrawal(int withdrawal)
 }
 void	Account::displayStatus( void ) const
 {
-        // _displayTimestamp();
     std::cout << "index:" << _accountIndex
               << ";amount:" << _amount
               << ";deposits:" << _nbDeposits
