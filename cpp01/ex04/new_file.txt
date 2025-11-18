@@ -1,0 +1,20 @@
+# ifndef MAI_HPP
+#define MAI_HPP
+
+// ali <istream>
+ali <iostream> #include <string>
+ali <fstream>
+
+// class replace
+// {
+// private:
+//     std::string filename;
+// public:
+//     replace(std::string name);
+//     ~replace();
+// };
+
+
+
+
+#endif
