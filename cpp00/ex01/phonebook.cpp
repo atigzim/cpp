@@ -1,7 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atigzim <atigzim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/29 18:42:57 by atigzim           #+#    #+#             */
+/*   Updated: 2025/11/29 19:16:14 by atigzim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 
+PhoneBook::PhoneBook() : inds(0) {}
+PhoneBook::~PhoneBook() {
+    std::cout << "PhoneBook destructor called." << std::endl;
+}
+void PhoneBook::addinds()
+{
+    if (inds < 8)
+        inds++;
+}
 void PhoneBook::searchContact()
 {
+    int index;
+    std::string input;
+    
     if(this->inds == 0)
     {
         std::cout << "No contacts available to display." << std::endl;
@@ -15,8 +39,6 @@ void PhoneBook::searchContact()
         this->contact[i].printContact();
         std::cout << std::endl;
     }
-    std::string input;
-    int index;
     
     while (true)
     {
@@ -36,6 +58,7 @@ void PhoneBook::searchContact()
         break;
     }
 }
+
 int PhoneBook::pars_index(std::string input)
 {
     if (contact[0].pars_phoneNumber(input))

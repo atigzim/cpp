@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atigzim <atigzim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/29 18:42:02 by atigzim           #+#    #+#             */
+/*   Updated: 2025/11/29 19:09:13 by atigzim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 
-int  Contact::pars_phoneNumber(std::string str)
+int Contact::pars_phoneNumber(std::string str)
 {
     if(str.empty())
-    {
         return 1;
+        
+    for (size_t i = 0; i < str.size(); i++)
+    {
+        if(isdigit(str[i]) == 0)
+            return (1);
     }
-	for (size_t i = 0; i < str.size(); i++)
-	{
-		if(isdigit(str[i]) == 0)
-			return (1);	
-	}
-	return (0);
+    return (0);
 }
 int Contact::pars_contact_fields(std::string &str)
 {
@@ -77,6 +88,7 @@ void Contact::setContact()
     }
     
 }
+
 void Contact::printContact()
 {
 	if (firstName.length() > 10)
@@ -98,6 +110,7 @@ void Contact::printContact()
 
 	std::cout << "|" << std::endl;
 }
+
 void Contact::chooseContack()
 {
 	std::cout << "firstName : " << firstName <<"\n" ;
@@ -105,5 +118,4 @@ void Contact::chooseContack()
 	std::cout << "nickname : " << nickname <<"\n";
 	std::cout << "phoneNumber : " << phoneNumber <<"\n";
 	std::cout << "darkestSecret : " << darkestSecret <<"\n";
-	// std::cout << std ::endl;
 }

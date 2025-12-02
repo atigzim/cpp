@@ -1,13 +1,17 @@
 CXX = c++
+INCLUDES = HumanA.hpp HumanB.hpp Weapon.hpp
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = tests.cpp Account.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = job
+NAME = weapon
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp $(INCLUDES)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ)
@@ -16,4 +20,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
 .PHONY: all clean fclean re

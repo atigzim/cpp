@@ -1,13 +1,13 @@
 CXX = c++
-INCLUDES = phonebook.hpp
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDES)
+INCLUDES = phonebook.hpp contact.hpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 SRC = main.cpp phonebook.cpp contact.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = PHONEBOOK
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INCLUDES)
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
@@ -17,3 +17,4 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+.PHONY: all clean fclean re
