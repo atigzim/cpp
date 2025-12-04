@@ -29,9 +29,10 @@ int main(int ac, char *av[])
         {
             if(!std::getline(inputFile, str))
             {
-
                 break;
             }
+            else
+                outputFile << std::endl;
 
         }
         size_t pos = str.find(s1);
@@ -57,7 +58,6 @@ int main(int ac, char *av[])
         {
             outputFile << str; 
         }
-        // std::cout << str << std::endl;
     }
     outputFile << std::endl;
 

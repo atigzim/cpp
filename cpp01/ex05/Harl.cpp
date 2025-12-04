@@ -27,16 +27,17 @@ void Harl::error( void )
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain( std::string level )
+void Harl::complain( std::string level)
 {
-    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string lev[4] ={"DEBUG" , "INFO", "WARNING", "ERROR"};
+    void (Harl::*ptr_fou)(void) arr[4]= {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     for (int i = 0; i < 4; i++)
     {
-        if (level == levels[i])
+        if(level == lev[i])
         {
-            (this->*functions[i])();
-            return;
+            std::cout << arr[i];
+            break;
         }
+        i++;
     }
 }

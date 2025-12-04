@@ -18,7 +18,7 @@ public:
     void complain( std::string level );
 };
 
-
+void (Harl::*ptr_fou)(void);
 
 
 #endif

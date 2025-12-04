@@ -1,1 +1,3 @@
-ali "main.hpp" &&  ali <cstdlib>
+
+ali ali aliali
+ali
