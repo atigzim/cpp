@@ -14,7 +14,7 @@ Zombie::~Zombie()
               << std::endl;
 }
 
-void Zombie::get_name(std::string _name)
+void Zombie::set_name(std::string _name)
 {
   name = _name;
 }

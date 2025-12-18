@@ -12,5 +12,4 @@ void Weapon::setType(std::string n)
 {
     type = n;
 }
-
 std::string Weapon::getType()const{return (type);}

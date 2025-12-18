@@ -2,6 +2,7 @@
 #define HUMANA_HPP
 
 #include "Weapon.hpp"
+#include <iostream>
 
 class HumanA
 {
@@ -9,7 +10,7 @@ class HumanA
         std::string name;
         Weapon& weapon;
     public:
-        HumanA();
+        HumanA(std::string n, Weapon &w);
         ~HumanA();
         void attack();
 };
