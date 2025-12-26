@@ -39,10 +39,32 @@ void ClapTrap::beRepaired(unsigned int amount)
     energyPoints--;
     hitPoints += amount;
     std::cout << "ClapTrap " << name << " repairs " << amount
-        << "Current hit points: " << hitPoints << std::endl;
+        << " Current hit points: " << hitPoints << std::endl;
 }
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << name << " has been destroyed." << std::endl;
 }
+
+ClapTrap::ClapTrap(const ClapTrap &other) : 
+    name(other.name), 
+    hitPoints(other.hitPoints), 
+    energyPoints(other.energyPoints), 
+    attackDamage(other.attackDamage) {
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+}
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this->energyPoints != other.energyPoints)
+        this->energyPoints = other.energyPoints;
+    if(this->hitPoints != other.hitPoints)
+       this->hitPoints = other.hitPoints;
+    if(this->attackDamage != other.attackDamage) 
+        this->attackDamage = other.attackDamage;
+    if(this->name != other.name)
+        this->name = other.name;
+    return(*this);
+}
+
 

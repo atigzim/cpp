@@ -54,3 +54,4 @@ ScavTrap::ScavTrap(const std::string& name)
     energyPoints = 50;
     attackDamage = 20;
 }
+

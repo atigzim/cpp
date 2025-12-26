@@ -1,9 +1,9 @@
 CXX = c++
-INCLUDES = ClapTrap.hpp ScavTrap.hpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp 
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = ScavTrap
+NAME = FragTrap
 
 all: $(NAME)
 

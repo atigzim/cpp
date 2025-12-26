@@ -1,29 +1,30 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
     std::cout << "\n--- Constructors ---" << std::endl;
-    ScavTrap a("Ali");
-    ScavTrap b("Bob");
+    FragTrap a("Ali");
+    FragTrap b("Bob");
 
     std::cout << "\n--- Attack test ---" << std::endl;
     a.attack("Bob");
-    b.takeDamage(20);
+    b.takeDamage(30);
 
     std::cout << "\n--- Repair test ---" << std::endl;
     b.beRepaired(10);
 
-    std::cout << "\n--- Guard Gate ---" << std::endl;
-    a.guardGate();
+    std::cout << "\n--- High Fives ---" << std::endl;
+    a.highFivesGuys();
 
     std::cout << "\n--- Energy exhaustion ---" << std::endl;
-    for (int i = 0; i < 55; i++)
+    for (int i = 0; i < 105; i++)
         a.attack("Bob");
 
     std::cout << "\n--- Death test ---" << std::endl;
     b.takeDamage(200);
     b.attack("Ali");
-    b.guardGate();
+    b.highFivesGuys();
 
     return 0;
 }
+

@@ -1,15 +1,24 @@
 #include "ClapTrap.hpp"
 
-int main()
+int main(void)
 {
-    ClapTrap clap("CL4P-TP");
+    ClapTrap a("Ali");
+    ClapTrap b("Bob");
 
-    clap.attack("Target1");
-    clap.takeDamage(5);
-    clap.beRepaired(3);
-    clap.takeDamage(10);
-    clap.attack("Target2");
-    clap.beRepaired(5);
+    std::cout << "\n--- Basic attacks ---" << std::endl;
+    a.attack("Bob");
+    b.takeDamage(5);
+
+    std::cout << "\n--- Repair ---" << std::endl;
+    b.beRepaired(3);
+
+    std::cout << "\n--- Energy exhaustion ---" << std::endl;
+    for (int i = 0; i < 12; i++)
+        a.attack("Bob");
+
+    std::cout << "\n--- Death test ---" << std::endl;
+    b.takeDamage(20);
+    b.attack("Ali");
 
     return 0;
 }
