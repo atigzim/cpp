@@ -5,9 +5,11 @@ int main(void)
     std::cout << "\n--- Constructors ---" << std::endl;
     FragTrap a("Ali");
     FragTrap b("Bob");
+    ScavTrap s("sisi");
 
     std::cout << "\n--- Attack test ---" << std::endl;
     a.attack("Bob");
+    s.attack("ali");
     b.takeDamage(30);
 
     std::cout << "\n--- Repair test ---" << std::endl;

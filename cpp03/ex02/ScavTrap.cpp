@@ -3,6 +3,7 @@
 ScavTrap::ScavTrap()
 	: ClapTrap("ScavTrap")
 {
+    std::cout << " ScavTrap Default constructor called" << std::endl;
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
@@ -23,8 +24,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
        this->hitPoints = other.hitPoints;
     if(this->attackDamage != other.attackDamage) 
         this->attackDamage = other.attackDamage;
-    // if(this->name != other.name)
-    //     this->name == other.name;
     return(*this);
 }
 
@@ -50,6 +49,7 @@ void ScavTrap::guardGate()
 ScavTrap::ScavTrap(const std::string& name)
     : ClapTrap(name)
 {
+    std::cout << "ScavTrap " << name << " ScavTrap has been created";
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;

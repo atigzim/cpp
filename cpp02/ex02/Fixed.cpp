@@ -85,29 +85,35 @@ bool Fixed::operator>=(const Fixed &other) const
     return (false);  
 }
 
-Fixed &Fixed::operator+(const Fixed &other)
-{
-    this->value += other.value;
-    return (*this);
-}
-
-Fixed &Fixed::operator*(const Fixed &other)
+Fixed Fixed::operator+(const Fixed &other) const
 {
     Fixed r;
-    r.value = this->value * other.value;
-    return (*r);
+    r.value = this->value + other.value;  
+    return (r);
 }
 
-Fixed &Fixed::operator-(const Fixed &other)
+Fixed Fixed::operator-(const Fixed &other) const
 {
-    this->value -= other.value;
-    return (*this);
+    Fixed r;
+    r.value = this->value - other.value;
+    return (r);
 }
 
-Fixed &Fixed::operator/(const Fixed &other)
+Fixed Fixed::operator*(const Fixed &other) const
 {
-    this->value /= other.value;
-    return (*this);
+    Fixed r;
+    long long temp = (long long)this->value * other.value;
+    r.value = temp >> fractionalBits;  
+    return (r);
+}
+
+
+Fixed Fixed::operator/(const Fixed &other) const
+{
+    Fixed r;
+    long long temp = ((long long)this->value << fractionalBits);
+    r.value = temp / other.value;
+    return (r);
 }
 
 Fixed Fixed::operator++()

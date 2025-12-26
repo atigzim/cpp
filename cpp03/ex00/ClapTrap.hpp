@@ -19,6 +19,7 @@ public:
     ClapTrap &operator=(const ClapTrap &other);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    // void getInfo();
     ~ClapTrap();
 };
 

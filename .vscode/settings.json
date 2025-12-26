@@ -60,5 +60,6 @@
         "queue": "cpp",
         "ranges": "cpp",
         "fstream": "cpp"
-    }
+    },
+    "github.copilot.chat.agent.currentEditorContext.enabled": false
 }
