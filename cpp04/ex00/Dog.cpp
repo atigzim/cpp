@@ -22,3 +22,20 @@ Dog::Dog(const Dog &other)
 {
 	*this = other;
 }
+
+void Dog::makeSound() const 
+{
+	std::cout << "awawawaw awowawwwo" << std::endl;
+}
+
+std::string Dog::getType() const
+{
+	return (type);
+}
+
+Dog::Dog(const std::string &type)
+	:Animal(type)
+	{
+		this->type = "Dog";
+		std::cout << "call Constructors of Dog with type" << std::endl;
+	}

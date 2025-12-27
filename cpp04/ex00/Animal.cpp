@@ -27,3 +27,13 @@ Animal::Animal(const std::string &type):type(type)
 {
     std::cout << "call Constructors of Animal with type" << std::endl;
 }
+
+void Animal::makeSound() const 
+{
+	std::cout << "sound animal" << std::endl;
+}
+
+std::string Animal::getType() const
+{
+	return (type);
+}

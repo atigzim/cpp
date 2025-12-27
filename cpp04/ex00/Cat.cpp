@@ -25,6 +25,18 @@ Cat::Cat(const Cat &other)
 Cat::Cat(const std::string &type)
     :Animal(type)
     {
-        this->type = type;
+        this->type = "Cat";
         std::cout << "call Constructors of Cat with type" << std::endl;
     }
+
+void Cat::makeSound() const 
+{
+	std::cout << "nahn alqqitat lisunaa awfia mithl alkilab "
+		<< "walakin la nkhbir alshurtata eala makan almukhadirat "
+		<< std::endl;
+}
+
+std::string Cat::getType() const
+{
+	return (type);
+}
