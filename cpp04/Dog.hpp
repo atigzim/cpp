@@ -1,7 +1,7 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-class Dog
+class Dog : public Animal
 {
 private:
 	
@@ -12,13 +12,6 @@ public:
 	~Dog();
 };
 
-Dog::Dog()
-{
-}
-
-Dog::~Dog()
-{
-}
 
 
 #endif

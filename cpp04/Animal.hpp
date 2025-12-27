@@ -9,23 +9,11 @@ class Animal
 	public:
 		Animal();
 		Animal(const Animal &other);
+		Animal(const std::string &type);
 		Animal &operator=(const Animal &other);
 		~Animal();
 };
 
-Animal::Animal()
-{
-	std::cout << "call Constructors of Animal" << std::endl;
-}
 
-Animal::~Animal()
-{
-	std::cout << "call Destructors of Animal" << std::endl;
-}
-
-Animal &Animal::operator=(const Animal &other)
-{
-
-}
 
 #endif
