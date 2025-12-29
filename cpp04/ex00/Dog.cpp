@@ -13,12 +13,12 @@ Dog &Dog::operator=(const Dog &other)
 {
 	if(this != &other)
 	{
-		// No member variables to copy in this example
+		this->type = other.type;
 	}
 	return *this;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
 	*this = other;
 }
