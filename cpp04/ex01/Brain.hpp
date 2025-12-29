@@ -5,20 +5,14 @@
 
 class Brain
 {
-private:
-	std::string ideas[100];
-public:
-	Brain();
-	~Brain();
+	private:
+		std::string ideas[100];
+	public:
+		Brain();
+		~Brain();
 };
 
-Brain::Brain()
-{
-}
 
-Brain::~Brain()
-{
-}
 
 
 #endif

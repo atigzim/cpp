@@ -2,10 +2,12 @@
 
 Cat::Cat()
 {
+	brain = new Brain();
 	std::cout << "call Constructors of Cat" << std::endl;
 }
 Cat::~Cat()
 {
+	free(brain);
 	std::cout << "call Destructors of Cat" << std::endl;
 }
 

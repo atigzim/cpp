@@ -2,11 +2,13 @@
 
 Dog::Dog()
 {
+	brain = new Brain();
 	std::cout << "call Constructors of Dog" << std::endl;
 }
 
 Dog::~Dog()
 {
+	delete brain;
 	std::cout << "call Destructors of Dog" << std::endl;
 }
 Dog &Dog::operator=(const Dog &other)
