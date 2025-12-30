@@ -2,12 +2,12 @@
 
 Cat::Cat()
 {
-	brain = new Brain();
+	// brain = new Brain();
 	std::cout << "call Constructors of Cat" << std::endl;
 }
 Cat::~Cat()
 {
-	free(brain);
+	delete brain;
 	std::cout << "call Destructors of Cat" << std::endl;
 }
 
@@ -15,19 +15,26 @@ Cat &Cat::operator=(const Cat &other)
 {
 	if(this != &other)
 	{
-		// No member variables to copy in this example
+		this->type = other.type;
+		this->brain = other.brain;
+		// this->brain = new Brain(*other.brain);
 	}
 	return *this;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other):Animal(other)
 {
-	*this = other;
+	this->type = other.type;
+	// this->brain = new Brain(*other.brain);
+	this->brain = other.brain;
+	
 }
 Cat::Cat(const std::string &type)
     :Animal(type)
     {
         this->type = "Cat";
+        // this->brain = new Brain();
+		this->brain = brain;
         std::cout << "call Constructors of Cat with type" << std::endl;
     }
 
