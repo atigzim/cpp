@@ -3,6 +3,7 @@
 Dog::Dog()
 {
 	brain = new Brain();
+	this->type = "Dog";
 	std::cout << "call Constructors of Dog" << std::endl;
 }
 
@@ -16,6 +17,7 @@ Dog &Dog::operator=(const Dog &other)
 	if(this != &other)
 	{
 		this->type = other.type;
+		delete this->brain;
 		this->brain = new Brain(*other.brain);
 	}
 	return *this;

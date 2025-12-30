@@ -1,10 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-	// brain = new Brain();
+	brain = new Brain();
+	this->type = "Cat";
 	std::cout << "call Constructors of Cat" << std::endl;
 }
+
 Cat::~Cat()
 {
 	delete brain;
@@ -16,7 +18,7 @@ Cat &Cat::operator=(const Cat &other)
 	if(this != &other)
 	{
 		this->type = other.type;
-		this->brain = other.brain;
+		// delete this->brain;
 		// this->brain = new Brain(*other.brain);
 	}
 	return *this;
@@ -26,15 +28,13 @@ Cat::Cat(const Cat &other):Animal(other)
 {
 	this->type = other.type;
 	// this->brain = new Brain(*other.brain);
-	this->brain = other.brain;
-	
 }
+
 Cat::Cat(const std::string &type)
     :Animal(type)
     {
         this->type = "Cat";
-        // this->brain = new Brain();
-		this->brain = brain;
+        this->brain = new Brain();
         std::cout << "call Constructors of Cat with type" << std::endl;
     }
 
