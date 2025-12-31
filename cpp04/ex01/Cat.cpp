@@ -18,8 +18,8 @@ Cat &Cat::operator=(const Cat &other)
 	if(this != &other)
 	{
 		this->type = other.type;
-		// delete this->brain;
-		// this->brain = new Brain(*other.brain);
+		delete this->brain;
+		this->brain = new Brain(*other.brain);
 	}
 	return *this;
 }
@@ -27,7 +27,7 @@ Cat &Cat::operator=(const Cat &other)
 Cat::Cat(const Cat &other):Animal(other)
 {
 	this->type = other.type;
-	// this->brain = new Brain(*other.brain);
+	this->brain = new Brain(*other.brain);
 }
 
 Cat::Cat(const std::string &type)
