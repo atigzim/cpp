@@ -4,10 +4,19 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	// Cat b;
-	delete j;//should not create a leak
-	delete i;
+
+	Animal *arr[10];
+	int size;
+
+	size = 10;
+	std::cout << "------ new Dog..."<< std::endl;
+	for (int i = 0; i < size /2; i++)
+		arr[i] = new Dog();
+	std::cout << "------ new Cat..."<< std::endl;
+	for (int b = size/2 ;b < size; b++)
+		arr[b] = new Cat();
+	std::cout << "------ free allllll..."<< std::endl;
+	for (int i = 0; i < size; i++)
+		delete arr[i];
 	return 0;
 }

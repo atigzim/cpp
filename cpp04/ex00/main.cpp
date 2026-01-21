@@ -16,7 +16,7 @@ void test_normal()
 	meta->makeSound();
 	delete j;
 	delete i;
-	// delete meta;
+	delete meta;
 }
 void test_wrong()
 {
